@@ -135,7 +135,7 @@ return {
 			tabline = {},
 			winbar = {},
 			inactive_winbar = {},
-			extensions = { "nvim-tree", "nvim-dap-ui", "Lazy", "toggleterm", "Mason" },
+			extensions = { "nvim-tree", "nvim-dap-ui", "lazy", "toggleterm", "mason" },
 		})
     -- vim.cmd([[highlight lualine_a_inactive guifg=#33b1ff guibg=#2a2b3c]])
     -- vim.cmd([[highlight lualine_b_inactive guifg=#45475a guibg=#2a2b3c]])
