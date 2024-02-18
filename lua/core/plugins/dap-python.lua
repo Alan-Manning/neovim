@@ -1,17 +1,20 @@
 return {
-  "mfussenegger/nvim-dap-python",
-  ft = "python",
-  dependencies = {
-    'mfussenegger/nvim-dap',
-    'rcarriga/nvim-dap-ui',
-  },
-  config = function()
-    local dappython = require("dap-python")
-    -- The Mason install of debugpy
-    -- Not currently using that atm dappython.setup('~/AppData/local/nvim-data/mason/packages/debugpy/venv/Scripts/python')
+	"mfussenegger/nvim-dap-python",
+	ft = "python",
+	dependencies = {
+		"mfussenegger/nvim-dap",
+		"rcarriga/nvim-dap-ui",
+	},
+	config = function()
+		local dappython = require("dap-python")
+		-- -- The Mason install of debugpy
+		-- dappython.setup("~/AppData/local/nvim-data/mason/packages/debugpy/venv/Scripts/python")
 
-    -- The system install of python
-    dappython.setup('~/AppData/local/Programs/Python/Python38/python')
+		-- The Mason install of debugpy
+		dappython.setup("~/py_venvs/debugpy/Scripts/python")
 
-  end
+		-- Not currently using that atm
+		-- The system install of python
+		-- dappython.setup('~/AppData/local/Programs/Python/Python38/python')
+	end,
 }

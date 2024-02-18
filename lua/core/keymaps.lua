@@ -1,13 +1,22 @@
 -- Navigate vim panes better
-vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
-vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
-vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
-vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
+vim.keymap.set('n', '<C-k>', ':wincmd k<CR>')
+vim.keymap.set('n', '<C-j>', ':wincmd j<CR>')
+vim.keymap.set('n', '<C-h>', ':wincmd h<CR>')
+vim.keymap.set('n', '<C-l>', ':wincmd l<CR>')
 
+-- Exit inset mode with jf
+-- vim.keymap.set('i', 'jf', '<Esc>')
+
+
+-- Move to start and end of line nicer
+vim.keymap.set("n", "L", "$", {desc = "Move to line end"})
+vim.keymap.set("n", "H", "^", {desc = "Move to line start"})
+vim.keymap.set("v", "L", "$", {desc = "Move to line end"})
+vim.keymap.set("v", "H", "^", {desc = "Move to line start"})
 
 -- Search
 vim.keymap.set('n', '<leader>cl', ':nohlsearch<CR>', { desc = "clear search" })
-vim.keymap.set("n", "<leader>%s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gcI<Left><Left><Left><Left>]], { desc = "Search & Replace on word" })
+vim.keymap.set("n", "<lader>%s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gcI<Left><Left><Left><Left>]], { desc = "Search & Replace on word" })
 
 
 -- Resize with arrows
@@ -23,12 +32,17 @@ vim.keymap.set("n", "<C-PageDown>", ":bprevious<CR>", { desc = "Buffer Prev" })
 
 
 -- Move text up and down
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv",  { desc = "Move Text Down" })
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv",  { desc = "Move Text Up" })
+-- The alt key now conflicts with tiler
+-- vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv",  { desc = "Move Text Down" })
+-- vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv",  { desc = "Move Text Up" })
+vim.keymap.set("v", "<C-J>", ":m '>+1<CR>gv=gv",  { desc = "Move Text Down" })
+vim.keymap.set("v", "<C-K>", ":m '<-2<CR>gv=gv",  { desc = "Move Text Up" })
 
 -- Better indent
 vim.keymap.set("v", ">", ">gv", { desc = "indent selection" })
 vim.keymap.set("v", "<", "<gv", { desc = "deindent selection" })
+vim.keymap.set("v", "<Tab>", ">gv", { desc = "indent selection" })
+vim.keymap.set("v", "<S-Tab>", "<gv", { desc = "deindent selection" })
 
 -- Keep Cursor in middle of screen
   -- when half page jumping

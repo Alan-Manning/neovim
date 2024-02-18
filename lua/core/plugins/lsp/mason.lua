@@ -17,8 +17,8 @@ return {
 		mason.setup({
 			ui = {
 				border = "rounded",
-        width = 0.7,
-        height = 0.7,
+				width = 0.7,
+				height = 0.7,
 
 				icons = {
 					package_installed = "✓",
@@ -34,7 +34,7 @@ return {
 				"html",
 				"cssls",
 				"tailwindcss",
-        "yamlls",
+				"yamlls",
 				"lua_ls",
 				"pyright",
 				-- "pylsp",
@@ -48,15 +48,25 @@ return {
 		-- and formatters are correctly installed through mason.
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"prettier", -- prettier formatter
-				"stylua", -- lua formatter
+				--lua
 				"selene", -- lua linter
+				"stylua", -- lua formatter
+
+				--Js
+				"eslint_d", -- js linter
+				"prettier", -- prettier formatter
+
+				--Yaml
+				"yamlfix", -- Yaml formatter
+
+				-- python
+				-- "pylint", -- python linter
+				"rstcheck", -- ReStructuredText linter
+				"mypy", -- python linter static type checking
+				"ruff", -- python linter
 				"isort", -- python formatter
 				"black", -- python formatter
 				"docformatter", -- python formatter
-				-- "pylint", -- python linter
-				"ruff", -- python linter
-				"eslint_d", -- js linter
 			},
 		})
 	end,

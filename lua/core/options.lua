@@ -10,7 +10,6 @@ vim.opt.showcmd = true
 vim.opt.laststatus = 2
 vim.opt.autowrite = true
 vim.opt.cursorline = true
--- vim.cmd [[hi Cursorline guibg=#11111A blend=100]]
 vim.opt.autoread = true
 
 vim.opt.termguicolors = true

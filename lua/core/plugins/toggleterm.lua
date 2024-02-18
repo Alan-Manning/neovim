@@ -34,7 +34,7 @@ return {
 			size = 100,
 			open_mapping = [[<c-t>]],
 			hide_numbers = true,
-			shade_filetypes = {},
+			-- shade_filetypes = {},
 			start_in_insert = true,
 			insert_mappings = true,
 			direction = "vertical", -- "vertical", "float"
@@ -42,15 +42,18 @@ return {
 				-- highlights which map to a highlight group name and a table of it's values
 				-- NOTE: this is only a subset of values, any group placed here will be set for the terminal window split
 				Normal = {
-					winblend = 3,
+          guibg = mocha.base,
 				},
-				NormalFloat = {},
+				NormalFloat = {
+          guibg = mocha.base
+        },
 				FloatBorder = {
+          guibg = mocha.base,
 					guifg = mocha.blue,
 				},
 			},
 			float_opts = {
-				border = "curved",
+				border = "none", -- "double",
 				width = function()
 					return math.floor(vim.o.columns * 0.7)
 				end,
@@ -72,7 +75,7 @@ return {
 		function _G.set_terminal_keymaps()
 			local opts = { buffer = 0 }
 			vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
-			vim.keymap.set("t", "jk", [[<C-\><C-n>]], opts)
+			vim.keymap.set("t", "jf", [[<C-\><C-n>]], opts)
 			vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts)
 			vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts)
 			vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)

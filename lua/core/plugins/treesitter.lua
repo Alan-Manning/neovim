@@ -1,33 +1,33 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	-- event = { "BufReadPre", "BufNewFile" },
-  ft = { "lua", "rust", "vim", "markdown", "markdown_inline" },
+	ft = { "python", "lua", "rust", "vim", "markdown", "markdown_inline" },
 	build = ":TSUpdate",
 	dependencies = {
-		-- "p00f/nvim-ts-rainbow",
-    -- "nvim-treesitter/playground",
+		"HiPhish/rainbow-delimiters.nvim", -- this replaced nvim-ts-rainbow
+		"nvim-treesitter/playground",
 	},
 	config = function()
 		local configs = require("nvim-treesitter.configs")
 		configs.setup({
 			-- A list of parser names, or "all"
-			ensure_installed = { "lua", "rust", "vim", "markdown", "markdown_inline" },
+			ensure_installed = { "python", "lua", "rust", "vim", "markdown", "markdown_inline" },
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)
 			sync_install = false,
 			auto_install = true,
-			ignore_install = { "python" },
+			-- ignore_install = { "python" },
 			autopairs = {
 				enable = true,
 			},
 			highlight = {
 				enable = true,
-				disable = { "python" },
+				-- disable = { "python" },
 				additional_vim_regex_highlighting = false,
 			},
 			indent = {
 				enable = true,
-				disable = { "yaml", "python"},
+				-- disable = { "yaml", "python"},
 			},
 			-- rainbow = {
 			-- 	enable = true,

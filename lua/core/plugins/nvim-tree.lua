@@ -16,8 +16,15 @@ return {
 		-- configure nvim-tree
 		nvimtree.setup({
 			-- hijack_cursor = true, -- keeps cursor on first letter of filename when moving in tree
+
+			-- sync_root_with_cwd = true, -- syncs with project nvim
+			-- respect_buf_cwd = true,
+			update_focused_file = {
+				enable = false,
+				update_root = false,
+			},
 			view = {
-				adaptive_size = true,
+				adaptive_size = false,
 				signcolumn = "no",
 				preserve_window_proportions = true,
 				width = {
@@ -25,7 +32,7 @@ return {
 				},
 				float = {
 					enable = false,
-					quit_on_focus_loss = true,
+					quit_on_focus_loss = false,
 					open_win_config = {
 						relative = "editor",
 						border = "rounded",
@@ -49,6 +56,16 @@ return {
 					},
 				},
 			},
+			actions = {
+				open_file = {
+					-- quit_on_open = false,
+					-- eject = true,
+					resize_window = false,
+				},
+			},
+      filters = {
+        git_ignored = false,
+      }
 		})
 
 		-- set keymaps

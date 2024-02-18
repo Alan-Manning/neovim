@@ -8,6 +8,7 @@ return {
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 		},
+		{ "ahmedkhalf/project.nvim" },
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -20,6 +21,8 @@ return {
 					i = {
 						["<C-k>"] = actions.move_selection_previous, -- move to prev result
 						["<C-j>"] = actions.move_selection_next, -- move to next result
+						["<C-f>"] = actions.preview_scrolling_down, -- scroll preview forward
+						["<C-b>"] = actions.preview_scrolling_up, -- scroll preview backwards
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 					},
 				},
@@ -29,7 +32,6 @@ return {
 						override_generic_sorter = true, -- override the generic sorter
 						override_file_sorter = true, -- override the file sorter
 						case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-						-- the default case_mode is "smart_case"
 					},
 				},
 			},
@@ -42,9 +44,11 @@ return {
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "telescope live grep" })
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "telescope buffers" })
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "telescope help tags" })
+		-- vim.keymap.set("n", "<leader>fp", projects.find_project_files, { desc = "telescope find projects" })
 
 		-- To get fzf loaded and working with telescope, you need to call
 		-- load_extension, somewhere after setup function:
 		require("telescope").load_extension("fzf")
+		require("telescope").load_extension("projects")
 	end,
 }
