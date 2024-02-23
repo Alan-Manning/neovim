@@ -60,7 +60,6 @@ return {
 				"yamlfix", -- Yaml formatter
 
 				-- python
-				-- "pylint", -- python linter
 				"rstcheck", -- ReStructuredText linter
 				"mypy", -- python linter static type checking
 				"ruff", -- python linter

@@ -49,6 +49,8 @@ vim.opt.splitright = true -- split vertical window to the right
 vim.opt.splitbelow = true -- split horizontal window to the bottom
 
 
+-- Recomended session options for use with auto-session.
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
 --   pattern = {"*.py", "*.lua"},
