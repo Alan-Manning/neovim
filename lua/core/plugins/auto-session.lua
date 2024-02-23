@@ -6,7 +6,7 @@ return {
 			log_level = "error",
 
 			auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
-			-- auto_save_enabled = false,
+			auto_save_enabled = true,
 
 			cwd_change_handling = {
 				restore_upcoming_session = true,
