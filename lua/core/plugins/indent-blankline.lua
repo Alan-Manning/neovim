@@ -31,9 +31,9 @@ return {
 		require("ibl").setup({
 			scope = {
 				enabled = true,
-				show_start = true,
-				show_end = true,
-				show_exact_scope = true,
+				show_start = false,
+				show_end = false,
+				show_exact_scope = false,
 				highlight = highlight,
 				include = {
 					node_type = {

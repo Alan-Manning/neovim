@@ -1,42 +1,32 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	-- event = { "BufReadPre", "BufNewFile" },
-	ft = { "python", "lua", "rust", "vim", "markdown", "markdown_inline" },
+	event = { "BufReadPre", "BufNewFile" },
+	-- ft = { "python", "lua", "rust", "vim", "markdown", "markdown_inline" },
 	build = ":TSUpdate",
 	dependencies = {
-		"HiPhish/rainbow-delimiters.nvim", -- this replaced nvim-ts-rainbow
-		"nvim-treesitter/playground",
+		"HiPhish/rainbow-delimiters.nvim",
+		-- "nvim-treesitter/playground",
 	},
 	config = function()
 		local configs = require("nvim-treesitter.configs")
 		configs.setup({
 			-- A list of parser names, or "all"
-			ensure_installed = { "python", "lua", "rust", "vim", "markdown", "markdown_inline" },
+			ensure_installed = { "python", "lua", "rust", "vim", "markdown", "markdown_inline", "yaml" },
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)
 			sync_install = false,
 			auto_install = true,
-			-- ignore_install = { "python" },
+
 			autopairs = {
 				enable = true,
 			},
 			highlight = {
 				enable = true,
-				-- disable = { "python" },
 				additional_vim_regex_highlighting = false,
 			},
 			indent = {
 				enable = true,
-				-- disable = { "yaml", "python"},
 			},
-			-- rainbow = {
-			-- 	enable = true,
-			-- 	-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-			-- 	extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-			-- 	max_file_lines = nil, -- Do not enable for files with more than n lines, int
-			-- 	-- colors = {}, -- table of hex strings
-			-- 	-- termcolors = {} -- table of colour name strings
-			-- },
 			-- playground = {
 			-- 	enable = true,
 			-- 	disable = {},
