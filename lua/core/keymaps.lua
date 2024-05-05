@@ -6,10 +6,15 @@ vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
 
 -- Exit inset mode with jf
 -- vim.keymap.set('i', 'jf', '<Esc>')
+--
+-- Make Control and I not be tab
+-- vim.keymap.set("n", "<C-i>", "", { noremap = true }) - dOg WhY mAp C-i To TaB tHiS iS aWfUlL
 
 -- Move to start and end of line nicer
 vim.keymap.set("n", "L", "$", { desc = "Move to line end" })
 vim.keymap.set("n", "H", "^", { desc = "Move to line start" })
+vim.keymap.set("v", "L", "$", { desc = "Move to line end" })
+vim.keymap.set("v", "H", "^", { desc = "Move to line start" })
 
 -- Search
 vim.keymap.set("n", "<leader>cl", ":nohlsearch<CR>", { desc = "clear search" })
@@ -29,6 +34,8 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "+Width" })
 -- Navigate buffers
 vim.keymap.set("n", "<C-PageUp>", ":bnext<CR>", { desc = "Buffer Next" })
 vim.keymap.set("n", "<C-PageDown>", ":bprevious<CR>", { desc = "Buffer Prev" })
+vim.keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Buffer Next" })
+vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", { desc = "Buffer Prev" })
 
 -- Move text up and down
 vim.keymap.set("v", "<C-J>", ":m '>+1<CR>gv=gv", { desc = "Move Text Down" })

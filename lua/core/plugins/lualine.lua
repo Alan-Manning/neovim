@@ -94,7 +94,14 @@ return {
 			},
 			sections = {
 				lualine_a = {
-					{ "mode", separator = { left = "", right = "" }, right_padding = 2 },
+					{
+						"mode",
+						separator = { left = "", right = "" },
+						padding = { left = 1, right = 1 },
+						fmt = function()
+							return ""
+						end,
+					},
 				},
 				lualine_b = {
 					{ "branch" },
@@ -107,7 +114,7 @@ return {
 						end,
 					},
 					{ "filetype", icon_only = true },
-					{ "filename" },
+					{ "filename", path = 1, symbols = { readonly = "󰈈", modified = "+" } },
 				},
 				lualine_c = {
 					{ "diagnostics" },
@@ -141,7 +148,10 @@ return {
 			},
 
 			inactive_sections = {
-				lualine_a = { { "filetype", icon_only = true }, "filename" },
+				lualine_a = {
+					{ "filetype", icon_only = true },
+					{ "filename", path = 1, symbols = { readonly = "󰈈", modified = "+" } },
+				},
 				lualine_b = {
 					-- { "filename" },
 					{ "diff" },

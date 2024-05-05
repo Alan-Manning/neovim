@@ -3,6 +3,7 @@ return {
 	event = "VeryLazy",
 	dependencies = {
 		"rcarriga/nvim-dap-ui",
+    "nvim-neotest/nvim-nio",
 	},
 	config = function()
 		local dapui = require("dapui")

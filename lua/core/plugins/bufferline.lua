@@ -49,6 +49,18 @@ return {
 					fg = mocha.base,
 					bg = mocha.blue,
 				},
+        duplicate = {
+					fg = mocha.red,
+					bg = mocha.surface1,
+        },
+				duplicate_selected = {
+					fg = mocha.text,
+					bg = mocha.blue,
+				},
+				duplicate_visible = {
+					fg = mocha.lavender,
+					bg = mocha.surface1,
+				},
 				indicator_visible = {
 					fg = mocha.surface1,
 					bg = mocha.surface1,
@@ -134,7 +146,7 @@ return {
 				show_buffer_close_icons = false,
 				show_close_icon = false,
 				show_tab_indicators = false,
-				show_duplicate_prefix = false, -- whether to show duplicate buffer prefix
+				show_duplicate_prefix = true, -- whether to show duplicate buffer prefix
 				persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
 
 				-- separator_style = { "", "" },
@@ -160,18 +172,7 @@ return {
 					bufferline.style_preset.no_italic,
 					bufferline.style_preset.no_bold,
 				},
-
-				-- vim.cmd [[
-				-- hi BufferLineFill guibg='#191724'
-				-- hi BufferLineSeparator guibg='#191724'
-				-- hi BufferLineSeparatorVisible guibg='#191724'
-				-- ]]
 			},
 		})
-
-		-- vim.cmd(string.gsub([[ hi BufferLineFill guibg='$COL' ]], "%$(%w+)", { COL = mocha.sky }))
-		-- vim.cmd(string.gsub([[ hi BufferLineSeparator guibg='$COL' ]], "%$(%w+)", { COL = mocha.blue }))
-		-- vim.cmd(string.gsub([[ hi BufferLineSeparatorVisible guibg='$COL' ]], "%$(%w+)", { COL = mocha.blue }))
-		-- vim.cmd(string.gsub([[ hi BufferLineFill guibg='$COL' ]], "%$(%w+)", { COL = mocha.sky }))
 	end,
 }
