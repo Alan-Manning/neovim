@@ -260,6 +260,8 @@ return {
           ["@comment.python"] = { fg = "#5a83a4", style = {} },
 
           ["@string.python"] = { fg = "#00c8ff", style = {} },
+          ["@string_content.python"] = { fg = "#00c8ff", style = {} },
+          ["@string.documentation.python"] = { fg = "#00c8ff", style = {} },
 
           ["@float.python"] = { fg = "#fbff00", style = {} },
           ["@number.python"] = { fg = "#fbff00", style = {} },
