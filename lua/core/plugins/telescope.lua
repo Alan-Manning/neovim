@@ -23,7 +23,7 @@ return {
 						["<C-j>"] = actions.move_selection_next, -- move to next result
 						["<C-f>"] = actions.preview_scrolling_down, -- scroll preview forward
 						["<C-b>"] = actions.preview_scrolling_up, -- scroll preview backwards
-						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+						["<C-s>"] = actions.send_to_qflist + actions.open_qflist,
 					},
 				},
 				extensions = {
